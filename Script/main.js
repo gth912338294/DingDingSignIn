@@ -13,15 +13,7 @@
 五：时间控制
 **/
 
-//打开钉钉
-function runApp(){
-    log("第一步，打开程序")
-    launchApp("钉钉")
-    sleep(2000);
-}
-
-
-//判断是否未登录 未登录则登陆
+//判断是否未登录 未登录则登陆   需要手动修改代码的方法
 function isLogin(){
     sleep(2000);
     log("判断是否未登录")
@@ -41,6 +33,8 @@ function isLogin(){
 }
 
 
+//判断是否到达需要签到的时间段  请按需调整代码，默认休眠5分钟，默认时间段为早8点38以后
+//只在1-5进行打卡
 function checkIsNow(){
     var curr_time = new Date();
     var now_Hours = curr_time.getHours();
@@ -61,6 +55,14 @@ function checkIsNow(){
     }else{
         log("非工作日")
     }
+}
+
+
+//打开钉钉
+function runApp(){
+    log("第一步，打开程序")
+    launchApp("钉钉")
+    sleep(2000);
 }
 
 
